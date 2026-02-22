@@ -1,0 +1,28 @@
+# App
+fastapi==0.109.2
+uvicorn[standard]==0.27.1
+python-dotenv==1.0.1
+pydantic==2.5.3
+pydantic-settings==2.1.0
+
+# Telegram
+aiogram==3.4.1
+aiohttp==3.9.3
+
+# DB
+sqlalchemy[asyncio]==2.0.25
+asyncpg==0.29.0
+psycopg2-binary==2.9.9
+alembic==1.13.1
+
+# Redis
+redis==5.0.1
+
+# Celery
+celery[redis]==5.3.6
+
+# HTTP
+httpx==0.26.0
+
+# Utils
+structlog==24.1.0

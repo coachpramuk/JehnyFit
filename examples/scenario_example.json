@@ -1,0 +1,33 @@
+{
+  "name": "Онбординг",
+  "steps": [
+    {
+      "id": "welcome",
+      "type": "text",
+      "text": "Добро пожаловать! Это первый шаг сценария.",
+      "buttons": [
+        { "text": "Далее", "callback_data": "next_intro" },
+        { "text": "Пропустить", "callback_data": "skip" }
+      ],
+      "transitions": [
+        { "on_callback": "next_intro", "next_step_id": "intro" },
+        { "on_callback": "skip", "next_step_id": "final" }
+      ]
+    },
+    {
+      "id": "intro",
+      "type": "image",
+      "text": "Краткое введение с картинкой.",
+      "photo": "https://example.com/intro.jpg",
+      "buttons": [{ "text": "Далее", "callback_data": "to_final" }],
+      "transitions": [{ "on_callback": "to_final", "next_step_id": "final" }]
+    },
+    {
+      "id": "final",
+      "type": "text",
+      "text": "Спасибо! Сценарий завершён.",
+      "next_step_id": null
+    }
+  ],
+  "subscription_required": false
+}
