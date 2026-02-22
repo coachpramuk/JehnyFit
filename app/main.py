@@ -4,7 +4,7 @@ from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
 
-from app.config import get_settings
+from config import get_settings
 from app.api.routes import health, webhook_telegram, webhook_payment
 
 logging.basicConfig(
