@@ -19,7 +19,7 @@ class Settings(BaseSettings):
     telegram_webhook_secret: str = ""
     private_group_id: int = 0
 
-    database_url: str = "postgresql+asyncpg://user:password@localhost:5432/bot_db"
+    database_url: str = postgresql+asyncpg://user:pass@host:5432/db
     redis_url: str = "redis://localhost:6379/0"
 
     payment_provider: str = "yookassa"
