@@ -24,7 +24,6 @@ class Settings(BaseSettings):
     telegram_webhook_secret: str = ""
     private_group_id: int = 0
 
-    # ✅ ВАЖНО: строка в кавычках + алиас на DATABASE_URL из окружения
     database_url: str = Field(
         default="postgresql+asyncpg://user:pass@host:5432/db",
         validation_alias="DATABASE_URL",
