@@ -7,7 +7,7 @@ from aiogram.enums import ParseMode
 from aiogram.types import Update
 from fastapi import APIRouter, Request, Response, Header, HTTPException
 
-from config import get_settings
+from app.config import get_settings
 
 router = APIRouter(prefix="/webhook", tags=["telegram"])
 logger = logging.getLogger(__name__)
