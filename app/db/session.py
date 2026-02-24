@@ -9,7 +9,7 @@ from app.db.base import Base
 logger = logging.getLogger(__name__)
 
 settings = get_settings()
-print("REAL DATABASE URL:", settings.database_url)
+
 engine = create_async_engine(
     settings.database_url,
     echo=settings.debug,
