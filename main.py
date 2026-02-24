@@ -1,3 +1,7 @@
+import os, sys
+print("CWD =", os.getcwd())
+print("SYS.PATH =", sys.path)
+print("APP DIR LIST =", os.listdir("app") if os.path.isdir("app") else "NO ./app DIR")
 import logging
 
 from contextlib import asynccontextmanager
