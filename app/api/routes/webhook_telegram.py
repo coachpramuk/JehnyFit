@@ -11,7 +11,6 @@ from app.config import get_settings
 
 router = APIRouter(prefix="/webhook", tags=["telegram"])
 logger = logging.getLogger(__name__)
-logger.warning
 settings = get_settings()
 
 
