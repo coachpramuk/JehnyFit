@@ -1,11 +1,16 @@
 from functools import lru_cache
 from typing import List
 
+from pydantic import Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Settings(BaseSettings):
-    model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8", extra="ignore")
+    model_config = SettingsConfigDict(
+        env_file=".env",
+        env_file_encoding="utf-8",
+        extra="ignore",
+    )
 
     app_env: str = "development"
     debug: bool = False
@@ -19,7 +24,12 @@ class Settings(BaseSettings):
     telegram_webhook_secret: str = ""
     private_group_id: int = 0
 
-    database_url: str = postgresql+asyncpg://user:pass@host:5432/db
+    # ✅ ВАЖНО: строка в кавычках + алиас на DATABASE_URL из окружения
+    database_url: str = Field(
+        default="postgresql+asyncpg://user:pass@host:5432/db",
+        validation_alias="DATABASE_URL",
+    )
+
     redis_url: str = "redis://localhost:6379/0"
 
     payment_provider: str = "yookassa"
